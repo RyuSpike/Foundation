@@ -75,9 +75,8 @@ Public Class Foundation
         Return _TotalFunds
     End Function
 
-    Public Function Display() As String
+    Public Overridable Function Display() As String
 
-        Return "Name: " & _Name & "/Registration Number: " & _RegistrationNum &
-            "/Total Funds: " & _TotalFunds
+        Return "Name: " & _Name & "/Registration Number: " & _RegistrationNum & "/Total Funds: "
     End Function
 End Class

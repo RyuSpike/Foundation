@@ -30,10 +30,10 @@ Public Class FeedingScheme
 
     'Methods
     Public Overrides Function CalculateFunds() As Double
-
-        For index As Integer = 1 To NumYears
-            YearsActive(index)
-        Next index
+        Return MyBase.CalculateFunds - CostOfFood - Expense
+    End Function
+    Public Overrides Function Display() As String
+        Return " Feeding scheme/" & MyBase.Display()
     End Function
 
 End Class

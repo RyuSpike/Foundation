@@ -11,11 +11,13 @@ Option Strict On
 Option Explicit On
 Option Infer Off
 Public Class OldAge
+    Inherits Foundation
     Private _nPensioners As Integer
+    Private _Allowance As Double
 
     'Constructor
-    Public Sub New()
-        MyBase.New
+    Public Sub New(Name As String, RegNum As String, Years As Integer)
+        MyBase.New(Name, RegNum, Years)
     End Sub
 
     'Property Methods
@@ -27,4 +29,19 @@ Public Class OldAge
             _nPensioners = value
         End Set
     End Property
+    Public WriteOnly Property Allowance As Double
+        Set(value As Double)
+            _Allowance = value
+        End Set
+    End Property
+
+    'Methods 
+    Public Overrides Function CalculateFunds() As Double
+        Return MyBase.CalculateFunds() - (_nPensioners * _Allowance) - Expense
+    End Function
+
+    Public Overrides Function Display() As String
+        Return "Old Age Home/" & MyBase.Display()
+    End Function
+
 End Class
