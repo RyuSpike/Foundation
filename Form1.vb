@@ -33,25 +33,28 @@ Public Class Form1
                     Case foundationtype.OldAge
                         Dim objOldAge As OldAge
                         objOldAge = New OldAge(Name, Registration_Number, nYears)
+                        nfoundation(F) = objOldAge 'Upcasting
                         YearsFunds(F, nYears)
                         objOldAge.nPensioners = CInt(InputBox("How many Pensioners are in the Old Age Home ?", "Enter Number Of Pensioners"))
-                        nfoundation(F) = objOldAge 'Upcasting
+
 
 
                     Case foundationtype.feedingscheme
                         Dim objFeedingScheme As FeedingScheme
                         objFeedingScheme = New FeedingScheme(Name, Registration_Number, nYears)
+                        nfoundation(F) = objFeedingScheme 'Upcasting
                         YearsFunds(F, nYears)
                         objFeedingScheme.CostOfFood = CDbl(InputBox("How much did the Food cost ?", "Enter Cost Of Food"))
-                        nfoundation(F) = objFeedingScheme 'Upcasting
+
 
 
                     Case foundationtype.orphanage
                         Dim objOrphanage As Orphanage
                         objOrphanage = New Orphanage(Name, Registration_Number, nYears)
+                        nfoundation(F) = objOrphanage 'Upcasting
                         YearsFunds(F, nYears)
                         objOrphanage.nOrphans = CInt(InputBox("How Many orphans are in Foundation " & CStr(F) & " ?", "Enter Number Of Orphans"))
-                        nfoundation(F) = objOrphanage 'Upcasting
+
 
                 End Select
             Else
