@@ -7,21 +7,17 @@
 ' Practical: Team Project
 ' Class name: OldAge
 ' *****************************************************************
-Option Strict On
-Option Explicit On
-Option Infer Off
 Public Class OldAge
     Inherits Foundation
     Private _nPensioners As Integer
-    Private _Allowance As Double
 
     'Constructor
-    Public Sub New(Name As String, RegNum As String, Years As Integer)
-        MyBase.New(Name, RegNum, Years)
+    Public Sub New(Name As String, RegNum As String, YearsActive As Integer)
+        MyBase.New(Name, RegNum, YearsActive)
     End Sub
 
     'Property Methods
-    Public Property nPensiners As Integer
+    Public Property nPensioners As Integer
         Get
             Return _nPensioners
         End Get
@@ -29,19 +25,10 @@ Public Class OldAge
             _nPensioners = value
         End Set
     End Property
-    Public WriteOnly Property Allowance As Double
-        Set(value As Double)
-            _Allowance = value
-        End Set
-    End Property
 
-    'Methods 
-    Public Overrides Function CalculateFunds() As Double
-        Return MyBase.CalculateFunds() - (_nPensioners * _Allowance) - Expense
-    End Function
-
+    'Method
     Public Overrides Function Display() As String
-        Return "Old Age Home/" & MyBase.Display()
+        Return Environment.NewLine & "Name: " & Name & Environment.NewLine & "Registration Number: " & Registration &
+            Environment.NewLine & "Total Funds: " & CalculateFunds() & Environment.NewLine & "Funds Without Expenses: " & SubtractExpenses() & Environment.NewLine & "Number Of Pensioners: " & _nPensioners
     End Function
-
 End Class
