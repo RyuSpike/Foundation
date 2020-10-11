@@ -1,16 +1,13 @@
 ﻿' *****************************************************************
 ' Team Number: 18
 ' Team Member 1 Details: Maseko, N.A (217005670)
-' Team Member 2 Details: Surname, Initials (Student #)
+' Team Member 2 Details: Mashishi, K.S (219036810)
 ' Team Member 3 Details: Surname, Initials (Student #)
 ' Team Member 4 Details: e.g. Smith, J (202000001)
 ' Practical: Team Project
 ' Class name: Foundation
 ' *****************************************************************
-Option Strict On
-Option Explicit On
-Option Infer Off
-Public Class Foundation
+Public MustInherit Class Foundation
     Private _Name As String
     Private _RegistrationNum As String
     Private _TotalFunds As Double
@@ -18,11 +15,11 @@ Public Class Foundation
     Private _Expenses As Double
     Private _NumYears As Integer
     'Constructor
-    Public Sub New(Name As String, RegNum As String, YearsActive As Integer)
+    Public Sub New(Name As String, RegNum As String, nYears As Integer)
         _Name = Name
         _RegistrationNum = RegNum
-        _NumYears = YearsActive
-        ReDim _YearsActive(YearsActive)
+        _NumYears = nYears
+        ReDim _YearsActive(_NumYears)
     End Sub
     'Utility Method
     Public Sub Validate(value As Double)
@@ -44,7 +41,7 @@ Public Class Foundation
     End Property
     Public Property YearsActive(index As Integer) As Double
         Get
-            Return YearsActive(index)
+            Return _YearsActive(index)
         End Get
         Set(value As Double)
             _YearsActive(index) = value
@@ -58,25 +55,16 @@ Public Class Foundation
             _Expenses = value
         End Set
     End Property
-
-    Public ReadOnly Property NumYears As Integer
-        Get
-            Return _NumYears
-        End Get
-
-    End Property
-
     'Methods
     Public Overridable Function CalculateFunds() As Double
         _TotalFunds = 0
         For index As Integer = 1 To _NumYears
-            _TotalFunds += YearsActive(index)
+            _TotalFunds += _YearsActive(index)
         Next index
         Return _TotalFunds
     End Function
-
-    Public Overridable Function Display() As String
-
-        Return "Name: " & _Name & "/Registration Number: " & _RegistrationNum & "/Total Funds: "
+    Public Overridable Function SubtractExpenses() As Double
+        Return _TotalFunds - _Expenses
     End Function
+    Public MustOverride Function Display() As String
 End Class

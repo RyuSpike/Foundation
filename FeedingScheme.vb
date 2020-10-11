@@ -7,9 +7,6 @@
 ' Practical: Team Project
 ' Class name: FeedingScheme
 ' *****************************************************************
-Option Strict On
-Option Explicit On
-Option Infer Off
 Public Class FeedingScheme
     Inherits Foundation
     Private _CostOfFood As Double
@@ -30,10 +27,11 @@ Public Class FeedingScheme
 
     'Methods
     Public Overrides Function CalculateFunds() As Double
-        Return MyBase.CalculateFunds - CostOfFood - Expense
+        Dim answer As Double
+        Return answer
     End Function
     Public Overrides Function Display() As String
-        Return " Feeding scheme/" & MyBase.Display()
+        Return Environment.NewLine & "Name: " & Name & Environment.NewLine & "Registration Number: " & Registration &
+            Environment.NewLine & "Total Funds: " & CalculateFunds() & Environment.NewLine & "Total Funds With Expenses: " & SubtractExpenses() & Environment.NewLine & "Cost Of Food: " & _CostOfFood
     End Function
-
 End Class

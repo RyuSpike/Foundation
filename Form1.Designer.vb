@@ -23,37 +23,47 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.btnINPUT = New System.Windows.Forms.Button()
-        Me.txtDisplay = New System.Windows.Forms.Button()
+        Me.btnINITIALIZE = New System.Windows.Forms.Button()
+        Me.btnDisplay = New System.Windows.Forms.Button()
         Me.btnCREATE = New System.Windows.Forms.Button()
         Me.btnSAVETOFILE = New System.Windows.Forms.Button()
-        Me.txtDispaly = New System.Windows.Forms.TextBox()
+        Me.txtDisplay = New System.Windows.Forms.TextBox()
         Me.txtfiledisplay = New System.Windows.Forms.TextBox()
         Me.btnRead = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnINPUT
         '
-        Me.btnINPUT.Location = New System.Drawing.Point(24, 27)
+        Me.btnINPUT.Location = New System.Drawing.Point(24, 56)
         Me.btnINPUT.Name = "btnINPUT"
-        Me.btnINPUT.Size = New System.Drawing.Size(227, 38)
+        Me.btnINPUT.Size = New System.Drawing.Size(227, 23)
         Me.btnINPUT.TabIndex = 0
         Me.btnINPUT.Text = "INPUT"
         Me.btnINPUT.UseVisualStyleBackColor = True
         '
-        'txtDisplay
+        'btnINITIALIZE
         '
-        Me.txtDisplay.Location = New System.Drawing.Point(24, 71)
-        Me.txtDisplay.Name = "txtDisplay"
-        Me.txtDisplay.Size = New System.Drawing.Size(227, 28)
-        Me.txtDisplay.TabIndex = 2
-        Me.txtDisplay.Text = "DISPLAY"
-        Me.txtDisplay.UseVisualStyleBackColor = True
+        Me.btnINITIALIZE.Location = New System.Drawing.Point(24, 27)
+        Me.btnINITIALIZE.Name = "btnINITIALIZE"
+        Me.btnINITIALIZE.Size = New System.Drawing.Size(227, 23)
+        Me.btnINITIALIZE.TabIndex = 1
+        Me.btnINITIALIZE.Text = "INITIALIZE"
+        Me.btnINITIALIZE.UseVisualStyleBackColor = True
+        '
+        'btnDisplay
+        '
+        Me.btnDisplay.Location = New System.Drawing.Point(24, 85)
+        Me.btnDisplay.Name = "btnDisplay"
+        Me.btnDisplay.Size = New System.Drawing.Size(227, 23)
+        Me.btnDisplay.TabIndex = 2
+        Me.btnDisplay.Text = "DISPLAY"
+        Me.btnDisplay.UseVisualStyleBackColor = True
         '
         'btnCREATE
         '
-        Me.btnCREATE.Location = New System.Drawing.Point(24, 105)
+        Me.btnCREATE.Location = New System.Drawing.Point(24, 115)
         Me.btnCREATE.Name = "btnCREATE"
-        Me.btnCREATE.Size = New System.Drawing.Size(227, 33)
+        Me.btnCREATE.Size = New System.Drawing.Size(227, 23)
         Me.btnCREATE.TabIndex = 3
         Me.btnCREATE.Text = "CREATE FILE"
         Me.btnCREATE.UseVisualStyleBackColor = True
@@ -62,18 +72,18 @@ Partial Class Form1
         '
         Me.btnSAVETOFILE.Location = New System.Drawing.Point(24, 144)
         Me.btnSAVETOFILE.Name = "btnSAVETOFILE"
-        Me.btnSAVETOFILE.Size = New System.Drawing.Size(227, 34)
+        Me.btnSAVETOFILE.Size = New System.Drawing.Size(227, 23)
         Me.btnSAVETOFILE.TabIndex = 4
         Me.btnSAVETOFILE.Text = "SAVE TO FILE"
         Me.btnSAVETOFILE.UseVisualStyleBackColor = True
         '
-        'txtDispaly
+        'txtDisplay
         '
-        Me.txtDispaly.Location = New System.Drawing.Point(275, 27)
-        Me.txtDispaly.Multiline = True
-        Me.txtDispaly.Name = "txtDispaly"
-        Me.txtDispaly.Size = New System.Drawing.Size(513, 141)
-        Me.txtDispaly.TabIndex = 5
+        Me.txtDisplay.Location = New System.Drawing.Point(275, 27)
+        Me.txtDisplay.Multiline = True
+        Me.txtDisplay.Name = "txtDisplay"
+        Me.txtDisplay.Size = New System.Drawing.Size(513, 141)
+        Me.txtDisplay.TabIndex = 5
         '
         'txtfiledisplay
         '
@@ -84,9 +94,9 @@ Partial Class Form1
         '
         'btnRead
         '
-        Me.btnRead.Location = New System.Drawing.Point(24, 184)
+        Me.btnRead.Location = New System.Drawing.Point(24, 174)
         Me.btnRead.Name = "btnRead"
-        Me.btnRead.Size = New System.Drawing.Size(227, 28)
+        Me.btnRead.Size = New System.Drawing.Size(227, 23)
         Me.btnRead.TabIndex = 7
         Me.btnRead.Text = "READ FROM FILE"
         Me.btnRead.UseVisualStyleBackColor = True
@@ -95,13 +105,14 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 258)
+        Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.btnRead)
         Me.Controls.Add(Me.txtfiledisplay)
-        Me.Controls.Add(Me.txtDispaly)
+        Me.Controls.Add(Me.txtDisplay)
         Me.Controls.Add(Me.btnSAVETOFILE)
         Me.Controls.Add(Me.btnCREATE)
-        Me.Controls.Add(Me.txtDisplay)
+        Me.Controls.Add(Me.btnDisplay)
+        Me.Controls.Add(Me.btnINITIALIZE)
         Me.Controls.Add(Me.btnINPUT)
         Me.Name = "Form1"
         Me.Text = "Form1"
@@ -111,10 +122,11 @@ Partial Class Form1
     End Sub
 
     Friend WithEvents btnINPUT As Button
-    Friend WithEvents txtDisplay As Button
+    Friend WithEvents btnINITIALIZE As Button
+    Friend WithEvents btnDisplay As Button
     Friend WithEvents btnCREATE As Button
     Friend WithEvents btnSAVETOFILE As Button
-    Friend WithEvents txtDispaly As TextBox
+    Friend WithEvents txtDisplay As TextBox
     Friend WithEvents txtfiledisplay As TextBox
     Friend WithEvents btnRead As Button
 End Class

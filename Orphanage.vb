@@ -7,35 +7,27 @@
 ' Practical: Team Project
 ' Class name: Orphanage
 ' *****************************************************************
-Option Strict On
-Option Explicit On
-Option Infer Off
 Public Class Orphanage
     Inherits Foundation
-    Private _NumOrphans As Integer
-    Private _CostPerchild As Double
-    'Constructor
-    Public Sub New(Name As String, RegNum As String, Years As Integer)
-        MyBase.New(Name, RegNum, Years)
+    Private _nOrphans As Integer
 
+    'Constructor
+    Public Sub New(Name As String, RegNum As String, YearsActive As Integer)
+        MyBase.New(Name, RegNum, YearsActive)
     End Sub
 
     'Property Methods
-    Public Property NumOrphans As Integer
+    Public Property nOrphans As Integer
         Get
-            Return _NumOrphans
+            Return _nOrphans
         End Get
         Set(value As Integer)
-            _NumOrphans = value
+            _nOrphans = value
         End Set
     End Property
-    'Methods
-    Public Overrides Function CalculateFunds() As Double
-        Return MyBase.CalculateFunds() - (_CostPerchild * _NumOrphans) - Expense
-    End Function
-
+    'Method
     Public Overrides Function Display() As String
-        Return "Orphanage/" & MyBase.Display()
+        Return Environment.NewLine & "Name: " & Name & Environment.NewLine & "Registration Number: " & Registration &
+            Environment.NewLine & "Total Funds: " & CalculateFunds() & Environment.NewLine & "Funds Without Expenses: " & SubtractExpenses() & Environment.NewLine & "Number Of Orphans: " & _nOrphans
     End Function
-
 End Class
